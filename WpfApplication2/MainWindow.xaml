@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="Digital Asistant" Height="350" Width="525" Icon="CAI1.ico">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Name="GridBG" MinHeight="300" MinWidth="300" Background="#008aff">
+
+        <Button Background="#008aff" Name="ButtonControl" Width="200" Click="button_Click" Height="200" Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                                               ToolTip="Hit to start" IsTabStop="False">
+            <materialDesign:PackIcon Name="Icon" Kind="Microphone" Height="100" Width="100" />
+        </Button>
+        <StackPanel VerticalAlignment="Bottom">
+            <materialDesign:Snackbar HorizontalAlignment="Stretch" x:Name="SnackbarFive">
+                <materialDesign:SnackbarMessage Name="_logText" HorizontalAlignment="Center" Content="Connecting to speech service ..."   />
+            </materialDesign:Snackbar>
+        </StackPanel>
+    </Grid>
+</Window>
